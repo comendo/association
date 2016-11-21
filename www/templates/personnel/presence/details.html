@@ -1,0 +1,44 @@
+<ion-view view-title="Presence">
+  <ion-content>
+<div class="list"> 
+<form>
+  <div class="item item-divider">
+    Presence de {{ personnel.nom }} {{ personnel.prenom }}:
+  </div>
+  <div ng-repeat="pres in presence">
+	  <label class="item item-input">
+	    <span class="input-label">Date :</span>
+	    <input readonly ng-model="pres.date.date" type="text" placeholder="Date">
+	  </label>
+	  <label class="item item-input">
+	    <span class="input-label">Heure d'arrivee :</span>
+	    <input readonly ng-model="pres.ha" type="text" placeholder="Heure">
+	  </label>
+	  <!--<label class="item item-input">
+	    <span class="input-label">Debut pause:</span>
+	    <input readonly ng-model="personnel.naissance" value="personnel.naissance | date:'dd/MM/yyyy'" type="date" min="1939-12-31" max="2012-12-31">
+	  </label>
+	  <label class="item item-input">
+	  	<span class="input-label">Fin pause :</span>
+	    <input readonly ng-model="personnel.adresse" type="text" placeholder="Adresse">
+	  </label>
+	  <label class="item item-input">
+	    <span class="input-label">Heure depart :</span>
+	    <input readonly ng-model="personnel.email" type="text" placeholder="E-mail">
+	  </label>-->
+  </div>
+</form>
+</div>   
+  </ion-content>
+<div class="tabs">
+  <a class="tab-item" href="#app/personnel/all">
+    Liste personnel
+  </a>
+  <a class="tab-item" href="#app/personnel/informations/update/{{ personnel.id }}">
+    Modifier
+  </a>
+  <a class="tab-item" ng-click="test()">  
+    Imprimer
+  </a>
+</div>
+</ion-view>

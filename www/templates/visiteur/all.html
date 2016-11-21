@@ -1,0 +1,61 @@
+<ion-view view-title="Liste Visiteurs">
+  <ion-content>
+    <ion-list>
+		<!-- debut recherche des visiteurs -->
+		<div style="padding: 0px 15px;" class="table-container responsive-sm">
+			<!--<h1> {{'titleSearch' | translate}}</h1>-->
+			<div class="row">
+				<input class="noprint col-50" type="search" ng-model="filtre1" placeholder="Rechercher par">
+				<input class="noprint col-50" type="search" ng-model="filtre2" placeholder="et Rechercher par">
+			</div>
+		</div>
+		<div style="padding: 0px 15px;"  class="table-container responsive-sm">
+			<div ng-controller="visiteurAllCtrl as demo">
+			 	<ul class="list-inline row" ng-cloak> 
+		       		<li class="col" ng-repeat="col in demo.cols track by col.title" style="min-width: 100px">
+		          		<a href="" ng-click="demo.move(col,$index,-1)">
+		            		<span ng-show="!$first" class="glyphicon glyphicon-arrow-left"></span>
+		          		</a>
+		          		<input type="checkbox" ng-model="col.show"/>{{col.title}}
+		          		<a href="" ng-click="demo.move(col,$index, 1)">
+		            		<span ng-show="!$last" class="glyphicon glyphicon-arrow-right"></span>
+		         		</a>
+		        	</li>
+		      	</ul>
+				<hr>
+				<img alt="" src="img/image00.png" style="width: 78.55px; height: 84.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+				<img alt="" src="img/image01.png" style="width: 78.55px; height: 84.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+				<table ng-table-dynamic="demo.tableParams with demo.cols" 
+		             class="table table-condensed table-bordered table-striped"
+		        >
+		        	<tr ng-repeat="row in simpleList | filter:filtre1 | filter:filtre2">
+		          		<td ng-repeat="col in $columns">{{row.value[col.field]}}</td>
+		        	</tr>
+		    	</table>
+			</div>
+		</div>
+	<!--</div>-->
+    </ion-list>
+  </ion-content>
+  <div class="tabs">
+  <a class="tab-item" href="#app/visiteur/intro">
+    Accueil
+  </a>
+  <a class="tab-item" href="#app/visiteur/add">
+    Ajouter visiteur
+  </a>
+  <a class="tab-item" href="#app/home">
+    Home
+  </a>
+</div>
+</ion-view>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85603320-2', 'auto');
+  ga('send', 'pageview');
+
+</script>

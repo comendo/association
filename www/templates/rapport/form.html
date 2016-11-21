@@ -1,0 +1,138 @@
+<ion-view view-title="Rapport d'incident">
+  <ion-content>
+<div class="list">
+<form>
+  <div class="item item-divider">
+    Personnes concernées
+  </div>
+  <label class="item item-input">
+    <span class="input-label">Nom et pr&eacute;nom de l'agress&eacute; :</span>
+    <input ng-model="rapport.agresse.nomprenom" ng-change="sock(rapport)" type="text" placeholder="Nom et pr&eacute;nom de l'agress&eacute;">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Statut de l'agress&eacute; :</span>
+    <select ng-model="rapport.agresse.service">
+		<option ng-repeat="service in services">{{service}}</option>
+	</select>
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Nom et pr&eacute;nom de l'agresseur :</span>
+    <input ng-model="rapport.agresseur.nomprenom" ng-change="sock(rapport)" type="text" placeholder="Nom et pr&eacute;nom de l'agresseur">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Statut de l'agresseur :</span>
+    <select ng-model="rapport.agresseur.statut">
+		<option ng-repeat="statut in statuts">{{statut}}</option>
+	</select>
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Auteur du rapport :</span>
+    <input ng-model="rapport.auteur" ng-change="sock(rapport)" type="text" placeholder="Auteur du rapport">
+  </label>
+  <div class="item item-divider">
+    Informations sur l'incident
+  </div>
+  <label class="item item-input">
+    <span class="input-label">Nature de l'incident :</span>
+    <select ng-model="rapport.nature">
+		<option ng-repeat="nature in natures">{{nature}}</option>
+	</select>
+  </label> 
+  <label class="item item-input">
+    <span class="input-label">Lieu de l'incident :</span>
+    <select ng-model="rapport.lieu">
+		<option ng-repeat="lieu in lieux">{{lieu}}</option>
+	</select>
+  </label> 
+  <label class="item item-input">
+    <span class="input-label">Jour de l'incident :</span>
+    <select ng-model="rapport.jourIncident">
+		<option ng-repeat="jourIncident in jourIncidents">{{jourIncident}}</option>
+	</select>
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Tranche horaire de l'incident :</span>
+    <select ng-model="rapport.trancheIncident">
+		<option ng-repeat="trancheIncident in trancheIncidents">{{trancheIncident}}</option>
+	</select>
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Agressions :</span>
+    <select ng-model="rapport.agressions">
+		<option ng-repeat="agression in agressions">{{agression}}</option>
+	</select>
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Deviances :</span>
+    <select ng-model="rapport.deviances">
+		<option ng-repeat="deviance in deviances">{{deviance}}</option>
+	</select>
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Degradations :</span>
+    <select ng-model="rapport.degradations">
+		<option ng-repeat="degradation in degradations">{{degradation}}</option>
+	</select>
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Conduites :</span>
+    <select ng-model="rapport.conduites">
+		<option ng-repeat="conduite in conduites">{{conduite}}</option>
+	</select>
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Absences :</span>
+    <select ng-model="rapport.absences">
+		<option ng-repeat="absence in absences">{{absence}}</option>
+	</select>
+  </label>
+  
+  
+  
+  <label class="item item-input">
+    <span class="input-label">Souhaitez-vous une intervention ?</span>
+    <ion-radio ng-model="rapport.intervention" ng-change="sock(rapport)" ng-value="'true'">Oui</ion-radio>
+  	<ion-radio ng-model="rapport.intervention" ng-change="sock(rapport)" ng-value="'false'">Non</ion-radio>
+  </label>
+  <div ng-switch="rapport.intervention">
+  	<div ng-switch-when="true">
+	   	<label class="item item-input">
+	    	<span class="input-label">Laquelle :</span>
+	    	<input ng-model="rapport.laquelle" ng-change="sock(rapport)" type="text" placeholder="quelle intervention?">
+	  	</label>
+	</div>
+	<div ng-switch-when="false"></div>
+  	<div ng-switch-default></div>
+  </div>
+  <label class="item item-input">
+    <span class="input-label">Conditions particulières dans lesquelles l’incident s’est déroulé :</span>
+    <div text-angular name="rapport.conditions" ng-model="rapport.conditions"></div>
+  </label>
+  <label class="item item-input">
+    <span class="input-label">SUITE A DONNER AU RAPPORT :</span>
+    <input ng-model="rapport.suite" ng-change="sock(rapport)" type="text" placeholder="Suite à donner au rapport">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Fait le :</span>
+    <input ng-model="rapport.dateCreation" ng-change="sock(rapport)" type="date">
+  </label>
+  <label class="item item-input fin">
+    <div class="padding item item-input">
+		<button type="button" class="button button-block button-positive" id="submit" ng-click="submitForm(rapport)">Valider</button>
+	</div>
+  </label> 
+</form>
+</div>   
+  </ion-content>
+<div class="tabs">
+  <a class="tab-item" href="#app/rapport/all">
+    Liste rapports
+  </a>
+  <a class="tab-item" href="#app/rapport/details/{{ persoId }}">
+    Details
+  </a> 
+  <a class="tab-item" ng-click="test()">  
+    Imprimer
+  </a>
+</div>
+</ion-view>

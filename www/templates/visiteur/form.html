@@ -1,0 +1,67 @@
+<ion-view view-title="Ajouter visiteur">
+  <ion-content>
+  <form name="visiteurAddForm">
+  <div class="list">
+	<label class="item item-input">
+	  <span class="input-label">Nom</span>
+	  <input type="text" id="nom" ng-model="update.nom" value="{{ nom }}">
+	</label>
+	<label class="item item-input">
+	  <span class="input-label">Prenom</span>
+	  <input type="text" id="nom" ng-model="update.prenom" value="{{ prenom }}">
+	</label>
+	<label class="item item-input">
+	  <span class="input-label">Email</span>
+	  <input type="email" ng-model="update.mail">
+	</label>
+	<label class="item item-input">
+	  <span class="input-label">Telephone</span>
+	  <input type="tel" ng-model="update.tel">
+	</label>
+    <label class="item item-input item-select">
+      <div class="input-label">
+        Service
+      </div>
+      <select ng-model="update.service">
+        <option ng-repeat="service in services">{{service}}</option>
+      </select>
+    </label>
+	<label class="item item-input item-select">
+      <div class="input-label">
+        Objet
+      </div>
+      <select ng-model="update.objet">
+	    <option ng-repeat="objet in objets">{{objet}}</option>
+      </select>
+    </label>
+    <label class="item item-input">
+    <textarea placeholder="But" ng-model="update.but"></textarea>
+  </label>
+	<div class="padding">
+		<button type="button" class="button button-block button-positive"  ng-click="submitForm(update)">Ajouter</button>
+	</div>
+  </div>
+  </form>	
+  </ion-content>
+  <div class="tabs">
+  <a class="tab-item" href="#app/Volley-Ball/statistiques/presence">
+    presence
+  </a>
+  <a class="tab-item" href="#app/Volley-Ball/statistiques/add">
+    statistiques
+  </a>
+  <a class="tab-item" href="#app/Volley-Ball/statistiques/results">
+    resultats
+  </a>
+</div>
+</ion-view>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85603320-2', 'auto');
+  ga('send', 'pageview');
+
+</script>

@@ -1,0 +1,37 @@
+<ion-view view-title="Règlement intérieur ACED">
+  <ion-header-bar class="bar-positive">
+    <h1 class="title">Reglement intérieur ACED</h1>
+  </ion-header-bar>
+  <ion-content>
+    <ion-list>
+    <div ng-repeat="(key, val) in reglements">
+      <ion-item class="item-stable"
+                ng-click="toggleGroup(val)"
+                ng-class="{active: isGroupShown(val)}">
+          <i class="icon" ng-class="isGroupShown(val) ? 'ion-minus' : 'ion-plus'"></i>
+        &nbsp;
+       {{ key }}
+      </ion-item>
+      <ion-item class="item-accordion"
+                ng-repeat="(k,v) in val track by k"
+                ng-show="isGroupShown(val)"
+                ng-if="!v.label && v.contenu">
+                {{v.contenu}} 
+                <div ng-if="!v.label && !v.contenu"></div>
+      </ion-item>
+      <ion-item class="item-accordion item item-text-wrap item-icon-right"
+                ng-repeat="(k,v) in val track by k"
+                ng-show="isGroupShown(val)"
+                ng-if="v.label"
+                ng-click="toggleGroup(v)">
+                {{v.label}}
+                <div ng-show="isGroupShown(v)" ng-class="isGroupShown(val) ? 'expand-item active' : 'expand-item inactive'">
+		          <h3>{{v.contenu}}</h3>
+		        </div>
+                <i ng-class="isGroupShown(v) ? 'icon ion-chevron-down icon-accessory' : 'icon ion-chevron-right icon-accessory'"></i>
+      </ion-item>
+      
+    </div>
+  </ion-list>
+  </ion-content>
+</ion-view>

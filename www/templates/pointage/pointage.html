@@ -1,0 +1,34 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Pointer</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()">Fermer</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doLogin()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Mot de passe</span>
+          <input type="password" ng-model="loginData.password">
+        </label>
+        <label class="item item-input">
+          <span class="input-label" style="color:red;">{{ erreur }}</span>
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Valider</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85603320-2', 'auto');
+  ga('send', 'pageview');
+
+</script>

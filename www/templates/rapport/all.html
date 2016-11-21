@@ -1,0 +1,95 @@
+<ion-view view-title="Liste des rapports">
+  <ion-content>
+    <ion-list>
+    	<div class="item row"> 
+          <div class="col">Tous les rapports</div>
+          <div class="col">{{ date.date_full}}</div>
+        </div>
+      	<div style="padding: 0px 15px;" class="table-container responsive-sm">
+			<!--<h1> {{'titleSearch' | translate}}</h1>-->
+			<div class="row">
+				<input class="noprint col-50" type="search" ng-model="filtre1" placeholder="Rechercher par">
+				<input class="noprint col-50" type="search" ng-model="filtre2" placeholder="et Rechercher par">
+			</div>
+		</div>
+		<div style="padding: 0px 15px;"  class="table-container responsive-sm">
+			<div ng-controller="rapportAllCtrl as demo">
+			 	<ul class="list-inline row" ng-cloak> 
+		       		<li class="col" ng-repeat="col in demo.cols track by col.title" style="min-width: 100px">
+		          		<a href="" ng-click="demo.move(col,$index,-1)">
+		            		<span ng-show="!$first" class="glyphicon glyphicon-arrow-left"></span>
+		          		</a>
+		          		<input type="checkbox" ng-model="col.show"/>{{col.title}}
+		          		<a href="" ng-click="demo.move(col,$index, 1)">
+		            		<span ng-show="!$last" class="glyphicon glyphicon-arrow-right"></span>
+		         		</a>
+		        	</li>
+		      	</ul>
+				<hr> 
+				<img alt="" src="img/image00.png" style="width: 78.55px; height: 84.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+				<img alt="" src="img/image01.png" style="width: 78.55px; height: 84.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+				<table ng-table-dynamic="demo.tableParams with demo.cols" class="table table-condensed table-bordered table-striped">
+		        	<tr ng-repeat="row in simpleList | filter:filtre1 | filter:filtre2"> 
+		          		<td ng-repeat="col in $columns" ng-click="details(row['id'])">
+			          		<span ng-if="col.field == 'agresse.nomprenom'">{{ row['agresse'].nomprenom }}</span>
+			          		<div ng-if="col.field == 'agresse.service'" ng-repeat="(k,v) in row['agresse'].service">
+			          			<span ng-if="v == 'true' && k != 'autre'">{{ k }}</span>
+			          			<span ng-if="v == 'true' && k == 'autre'">{{ row['agresse'].service.precise }}</span>
+			          		</div>
+			          		<span ng-if="col.field == 'agresseur.nomprenom'">{{ row['agresseur'].nomprenom }}</span>
+			          		<div ng-if="col.field == 'agresseur.statut'" ng-repeat="(k,v) in row['agresseur'].statut">
+			          			<span ng-if="v == 'true' && k != 'autre'">{{ k }}</span> 
+			          			<span ng-if="v == 'true' && k == 'autre'">{{ row['agresseur'].statut.precise }}</span>
+			          		</div>
+			          		<div ng-if="col.field == 'nature'" ng-repeat="(k,v) in row['nature']">
+			          			<span ng-if="v == 'true'">{{ k }}</span>
+			          		</div>
+			          		<div ng-if="col.field == 'lieu'" ng-repeat="(k,v) in row['lieu']">
+			          			<span ng-if="v == 'true' && k != 'autre'">{{ k }}</span> 
+			          			<span ng-if="v == 'true' && k == 'autre'">{{ row['lieu'].precise }}</span>
+			          		</div>
+			          		<div ng-if="col.field == 'jourIncident'" ng-repeat="(k,v) in row['jourIncident']">
+			          			<span ng-if="v == 'true'">{{ k }}</span>
+			          		</div>
+			          		<div ng-if="col.field == 'trancheIncident'" ng-repeat="(k,v) in row['trancheIncident']">
+			          			<span ng-if="v == 'true'">{{ k }}</span>
+			          		</div>
+			          		<div ng-if="col.field == 'agressions'" ng-repeat="(k,v) in row['agressions']">
+			          			<span ng-if="v == 'true'">{{ k }}</span>
+			          		</div>
+			          		<div ng-if="col.field == 'deviances'" ng-repeat="(k,v) in row['deviances']">
+			          			<span ng-if="v == 'true'">{{ k }}</span>
+			          		</div>
+			          		<div ng-if="col.field == 'degradations'" ng-repeat="(k,v) in row['degradations']">
+			          			<span ng-if="v == 'true'">{{ k }}</span>
+			          		</div>
+			          		<div ng-if="col.field == 'conduites'" ng-repeat="(k,v) in row['conduites']">
+			          			<span ng-if="v == 'true'">{{ k }}</span>
+			          		</div>
+			          		<div ng-if="col.field == 'intervention'" ng-repeat="(k,v) in row['intervention']">
+			          			<span ng-if="v == 'true'">{{ k }}</span>
+			          		</div>
+			          		
+	          			<!--<div ng-if="col.field == 'participants'">
+	          				<span ng-repeat="part in row[col.field]">{{ part }}<br></span> 
+	          			</div>
+	          			<div ng-if="col.field == 'absents'">
+	          				<span ng-repeat="abs in row[col.field]">{{ abs }}<br></span> 
+	          			</div>-->
+	          				<span ng-if="col.field != 'agresse' && col.field != 'agresse.service' && col.field != 'agresseur' && col.field != 'agresseur.statut' && col.field != 'nature' && col.field != 'lieu' && col.field != 'jourIncident' && col.field != 'trancheIncident' && col.field != 'agressions' && col.field != 'deviances' && col.field != 'degradations' && col.field != 'conduites' && col.field != 'intervention'">{{ row[col.field] }}</span>
+          				</td>
+		        	</tr>
+		    	</table>
+			</div>
+		</div>
+    </ion-list>
+  </ion-content>
+  <div class="tabs">
+  <a class="tab-item" href="#app/home">
+    Accueil
+  </a>
+  <a class="tab-item button-full button-positive" href="#app/rapport/incident/add">
+     Ajouter un rapport;
+  </a>
+  </div>
+</ion-view>

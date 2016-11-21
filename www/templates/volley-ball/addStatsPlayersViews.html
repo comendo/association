@@ -1,0 +1,182 @@
+<ion-view view-title="Statistiques">
+  <ion-content>
+	<div ng-controller="addStatsPlayersController as demo">
+		<div class="row">
+			<div class="col">
+				<!--<label>{{ compteur }}:/Score</label>-->
+				<label>Score</label>
+				<input type="checkbox" ng-model="checked" ng-init="checked=true"/>		
+				<span ng-model="checked1" ng-click="checked1 = !checked1" style="cursor:pointer;color:green ;" ng-show="checked1">Inverse</span>
+				<span ng-model="checked1" ng-click="checked1 = !checked1" style="cursor:pointer;color: red;" ng-show="!checked1">Inverse</span>			
+			</div>
+		</div>
+	    <div class="row">
+			<div class="col">
+			 	<form name="joueursForm" id="joueursForm" method="POST" ng-submit="submitForm(joueursForm.$invalid)" novalidate="">
+			        <table class="table table-striped table-condensed" ng-show="!checked1">
+					<thead>
+				        <tr class="row">
+				        	<th class="col">Joueurs</th>
+				        	<th class="col">Poste</th>
+				            <th class="col service">Service</th>
+				            <th class="col attaque">Attaque</th>
+				            <th class="col contre">Contre</th>
+				            <th class="col reception">Reception</th>
+				            <th class="col defense">Defense</th>
+				            <th class="col soutien">Soutien</th>
+				            <th class="col relance">Relance</th>
+				            <th class="col passe">Passe</th>
+				        </tr>
+				    </thead>
+					<tbody>
+						<!--debut-->
+						<tr ng-repeat="player in players" class="row">
+							<td class="col">{{player.nom}} {{player.prenom}}</td>
+							<td class="col">{{ player.poste }}</td>
+							<!--debut {{ player.poste }} service-->
+			          		<td class="col">
+			          			<div class="service-0 alert-danger fixe" ng-click="player.statistiques.serviceTotal = player.statistiques.serviceTotal + 1;player.statistiques.service0 = player.statistiques.service0 + 1;saveAction();">
+			          				<span ng-if="checked">{{ player.statistiques.service0 }}</span>
+			          			</div>
+								<div class="service-1 alert-warning fixe" ng-click="player.statistiques.serviceTotal = player.statistiques.serviceTotal + 1;player.statistiques.service1 = player.statistiques.service1 + 1;player.statistiques.servicePoint = player.statistiques.servicePoint + 1;saveAction();">
+									<span ng-if="checked">{{ player.statistiques.service1 }}</span>
+								</div>
+								<div class="service-2 alert-success fixe" ng-click="player.statistiques.serviceTotal = player.statistiques.serviceTotal + 1;player.statistiques.service2 = player.statistiques.service2 + 1;player.statistiques.servicePoint = player.statistiques.servicePoint + 2;saveAction();">
+									<span ng-if="checked">{{ player.statistiques.service2 }}</span>
+								</div>
+								<span ng-if="checked">T:{{ player.statistiques.serviceTotal }}</span>
+								<span ng-if="checked">P:{{ player.statistiques.servicePoint }}</span>
+							</td> 
+							<!--fin {{ player.poste }} service-->
+							<!--debut {{ player.poste }} attaque-->
+			          		<td class="col">
+			          			<div class="attaque-0 alert-danger fixe" ng-click="player.statistiques.attaqueTotal = player.statistiques.attaqueTotal + 1;player.statistiques.attaque0 = player.statistiques.attaque0 + 1;saveAction();">
+			          				<span ng-if="checked">{{ player.statistiques.attaque0 }}</span>
+			          			</div>
+								<div class="attaque-1 alert-warning fixe" ng-click="player.statistiques.attaqueTotal = player.statistiques.attaqueTotal + 1;player.statistiques.attaque1 = player.statistiques.attaque1 + 1;player.statistiques.attaquePoint = player.statistiques.attaquePoint + 1;saveAction();">
+									<span ng-if="checked">{{ player.statistiques.attaque1 }}</span>
+								</div>
+								<div class="attaque-2 alert-success fixe" ng-click="player.statistiques.attaqueTotal = player.statistiques.attaqueTotal + 1;player.statistiques.attaque2 = player.statistiques.attaque2 + 1;player.statistiques.attaquePoint = player.statistiques.attaquePoint + 2;saveAction();">
+									<span ng-if="checked">{{ player.statistiques.attaque2 }}</span>
+								</div>
+								<span ng-if="checked">T:{{ player.statistiques.attaqueTotal }}</span>
+								<span ng-if="checked">P:{{ player.statistiques.attaquePoint }}</span>
+							</td> 
+							<!--fin {{ player.poste }} attaque-->
+							<!--debut {{ player.poste }} contre-->
+			          		<td class="col">
+			          			<div class="contre-0 alert-danger fixe" ng-click="player.statistiques.contreTotal = player.statistiques.contreTotal + 1;player.statistiques.contre0 = player.statistiques.contre0 + 1;saveAction();">
+			          				<span ng-if="checked">{{ player.statistiques.contre0 }}</span>
+			          			</div>
+								<div class="contre-1 alert-warning fixe" ng-click="player.statistiques.contreTotal = player.statistiques.contreTotal + 1;player.statistiques.contre1 = player.statistiques.contre1 + 1;player.statistiques.contrePoint = player.statistiques.contrePoint + 1;saveAction();">
+									<span ng-if="checked">{{ player.statistiques.contre1 }}</span>
+								</div>
+								<div class="contre-2 alert-success fixe" ng-click="player.statistiques.contreTotal = player.statistiques.contreTotal + 1;player.statistiques.contre2 = player.statistiques.contre2 + 1;player.statistiques.contrePoint = player.statistiques.contrePoint + 2;saveAction();">
+									<span ng-if="checked">{{ player.statistiques.contre2 }}</span>
+								</div>
+								<span ng-if="checked">T:{{ player.statistiques.contreTotal }}</span>
+								<span ng-if="checked">P:{{ player.statistiques.contrePoint }}</span>
+							</td> 
+							<!--fin {{ player.poste }} contre-->
+							<!--debut {{ player.poste }} reception-->
+			          		<td class="col">
+			          			<div class="reception-0 alert-danger fixe" ng-click="player.statistiques.receptionTotal = player.statistiques.receptionTotal + 1;player.statistiques.reception0 = player.statistiques.reception0 + 1;saveAction();">
+			          				<span ng-if="checked">{{ player.statistiques.reception0 }}</span>
+			          			</div>
+								<div class="reception-1 alert-warning fixe" ng-click="player.statistiques.receptionTotal = player.statistiques.receptionTotal + 1;player.statistiques.reception1 = player.statistiques.reception1 + 1;player.statistiques.receptionPoint = player.statistiques.receptionPoint + 1;saveAction();">
+									<span ng-if="checked">{{ player.statistiques.reception1 }}</span>
+								</div>
+								<div class="reception-2 alert-success fixe" ng-click="player.statistiques.receptionTotal = player.statistiques.receptionTotal + 1;player.statistiques.reception2 = player.statistiques.reception2 + 1;player.statistiques.receptionPoint = player.statistiques.receptionPoint + 2;saveAction();">
+									<span ng-if="checked">{{ player.statistiques.reception2 }}</span>
+								</div>
+								<span ng-if="checked">T:{{ player.statistiques.receptionTotal }}</span>
+								<span ng-if="checked">P:{{ player.statistiques.receptionPoint }}</span>
+							</td> 
+							<!--fin {{ player.poste }} reception-->
+							<!--debut {{ player.poste }} defense-->
+			          		<td class="col">
+			          			<div class="defense-0 alert-danger fixe" ng-click="player.statistiques.defenseTotal = player.statistiques.defenseTotal + 1;player.statistiques.defense0 = player.statistiques.defense0 + 1;saveAction();">
+			          				<span ng-if="checked">{{ player.statistiques.defense0 }}</span>
+			          			</div>
+								<div class="defense-1 alert-warning fixe" ng-click="player.statistiques.defenseTotal = player.statistiques.defenseTotal + 1;player.statistiques.defense1 = player.statistiques.defense1 + 1;player.statistiques.defensePoint = player.statistiques.defensePoint + 1;saveAction();">
+									<span ng-if="checked">{{ player.statistiques.defense1 }}</span>
+								</div>
+								<div class="defense-2 alert-success fixe" ng-click="player.statistiques.defenseTotal = player.statistiques.defenseTotal + 1;player.statistiques.defense2 = player.statistiques.defense2 + 1;player.statistiques.defensePoint = player.statistiques.defensePoint + 2;saveAction();">
+									<span ng-if="checked">{{ player.statistiques.defense2 }}</span>
+								</div>
+								<span ng-if="checked">T:{{ player.statistiques.defenseTotal }}</span>
+								<span ng-if="checked">P:{{ player.statistiques.defensePoint }}</span>
+							</td> 
+							<!--fin {{ player.poste }} defense-->
+							<!--debut {{ player.poste }} soutien-->
+			          		<td class="col">
+			          			<div class="soutien-0 alert-danger fixe" ng-click="player.statistiques.soutienTotal = player.statistiques.soutienTotal + 1;player.statistiques.soutien0 = player.statistiques.soutien0 + 1;saveAction();">
+			          				<span ng-if="checked">{{ player.statistiques.soutien0 }}</span>
+			          			</div>
+								<div class="soutien-1 alert-warning fixe" ng-click="player.statistiques.soutienTotal = player.statistiques.soutienTotal + 1;player.statistiques.soutien1 = player.statistiques.soutien1 + 1;player.statistiques.soutienPoint = player.statistiques.soutienPoint + 1;saveAction();">
+									<span ng-if="checked">{{ player.statistiques.soutien1 }}</span>
+								</div>
+								<div class="soutien-2 alert-success fixe" ng-click="player.statistiques.soutienTotal = player.statistiques.soutienTotal + 1;player.statistiques.soutien2 = player.statistiques.soutien2 + 1;player.statistiques.soutienPoint = player.statistiques.soutienPoint + 2;saveAction();">
+									<span ng-if="checked">{{ player.statistiques.soutien2 }}</span>
+								</div>
+								<span ng-if="checked">T:{{ player.statistiques.soutienTotal }}</span>
+								<span ng-if="checked">P:{{ player.statistiques.soutienPoint }}</span>
+							</td> 
+							<!--fin {{ player.poste }} soutien-->
+							<!--debut {{ player.poste }} relance-->
+			          		<td class="col">
+			          			<div class="relance-0 alert-danger fixe" ng-click="player.statistiques.relanceTotal = player.statistiques.relanceTotal + 1;player.statistiques.relance0 = player.statistiques.relance0 + 1;saveAction();">
+			          				<span ng-if="checked">{{ player.statistiques.relance0 }}</span>
+			          			</div>
+								<div class="relance-1 alert-warning fixe" ng-click="player.statistiques.relanceTotal = player.statistiques.relanceTotal + 1;player.statistiques.relance1 = player.statistiques.relance1 + 1;player.statistiques.relancePoint = player.statistiques.relancePoint + 1;saveAction();">
+									<span ng-if="checked">{{ player.statistiques.relance1 }}</span>
+								</div>
+								<div class="relance-2 alert-success fixe" ng-click="player.statistiques.relanceTotal = player.statistiques.relanceTotal + 1;player.statistiques.relance2 = player.statistiques.relance2 + 1;player.statistiques.relancePoint = player.statistiques.relancePoint + 2;saveAction();">
+									<span ng-if="checked">{{ player.statistiques.relance2 }}</span>
+								</div>
+								<span ng-if="checked">T:{{ player.statistiques.relanceTotal }}</span>
+								<span ng-if="checked">P:{{ player.statistiques.relancePoint }}</span>
+							</td> 
+							<!--fin {{ player.poste }} relance-->
+							<!--debut {{ player.poste }} passe-->
+			          		<td class="col">
+			          			<div class="passe-0 alert-danger fixe" ng-click="player.statistiques.passeTotal = player.statistiques.passeTotal + 1;player.statistiques.passe0 = player.statistiques.passe0 + 1;saveAction();">
+			          				<span ng-if="checked">{{ player.statistiques.passe0 }}</span>
+			          			</div>
+								<div class="passe-1 alert-warning fixe" ng-click="player.statistiques.passeTotal = player.statistiques.passeTotal + 1;player.statistiques.passe1 = player.statistiques.passe1 + 1;player.statistiques.passePoint = player.statistiques.passePoint + 1;saveAction();">
+									<span ng-if="checked">{{ player.statistiques.passe1 }}</span>
+								</div>
+								<div class="passe-2 alert-success fixe" ng-click="player.statistiques.passeTotal = player.statistiques.passeTotal + 1;player.statistiques.passe2 = player.statistiques.passe2 + 1;player.statistiques.passePoint = player.statistiques.passePoint + 2;saveAction();">
+									<span ng-if="checked">{{ player.statistiques.passe2 }}</span>
+								</div>
+								<span ng-if="checked">T:{{ player.statistiques.passeTotal }}</span>
+								<span ng-if="checked">P:{{ player.statistiques.passePoint }}</span>
+							</td> 
+							<!--fin {{ player.poste }} passe-->
+			        	</tr>
+			        	<!--fin {{ player.poste }}-->
+			        </tbody>
+			        </table>
+			    </form>
+			</div>
+		</div>
+	    <!--<div id="visualization"></div>-->
+		<div class="row">
+			<div class="col">
+				<button class="button button-full button-positive" ng-click="saveStats()">enregistrer</button>
+			</div>
+		</div>
+</div>
+  </ion-content>
+  <div class="tabs">
+  <a class="tab-item" href="#app/Volley-Ball/statistiques/presence">
+    presence
+  </a>
+  <a class="tab-item" href="#app/Volley-Ball/statistiques/add">
+    statistiques
+  </a>
+  <a class="tab-item" href="#app/Volley-Ball/statistiques/results">
+    resultats
+  </a>
+</div>
+</ion-view>

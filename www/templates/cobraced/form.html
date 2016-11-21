@@ -1,0 +1,120 @@
+<ion-view view-title="Ajouter visiteur">
+  <ion-content>
+  <form name="visiteurAddForm" ng-submit="submitForm(update)">
+  <div class="list">
+	<label class="item item-input">
+	  <span class="input-label">Nom</span>
+	  <input type="text" id="nom" ng-model="update.nom" value="{{ nom }}">
+	</label>
+	<label class="item item-input">
+	  <span class="input-label">Prenom</span>
+	  <input type="text" id="nom" ng-model="update.prenom" value="{{ prenom }}">
+	</label>
+	<label class="item item-input">
+	  <span class="input-label">Email</span>
+	  <input type="email" ng-model="update.mail">
+	</label>
+	<label class="item item-input">
+	  <span class="input-label">Telephone</span>
+	  <input type="tel" ng-model="update.tel">
+	</label>
+    <label class="item item-input item-select">
+      <div class="input-label">
+        Service
+      </div>
+      <select ng-model="update.service">
+        <option ng-repeat="service in services">{{service}}</option>
+      </select>
+    </label>
+	<label class="item item-input item-select">
+      <div class="input-label">
+        Objet
+      </div>
+      <select ng-model="update.objet">
+	    <option ng-repeat="objet in objets">{{objet}}</option>
+      </select>
+    </label>
+    <label class="item item-input">
+    <textarea placeholder="But" ng-model="update.but"></textarea>
+  </label>
+	<div class="padding">
+		<button type="button" class="button button-block button-positive" id="submit">Ajouter</button>
+	</div>
+  </div>
+  </form>	
+  </ion-content>
+  <div class="tabs">
+  <a class="tab-item" href="#app/Volley-Ball/statistiques/presence">
+    presence
+  </a>
+  <a class="tab-item" href="#app/Volley-Ball/statistiques/add">
+    statistiques
+  </a>
+  <a class="tab-item" href="#app/Volley-Ball/statistiques/results">
+    resultats
+  </a>
+</div>
+</ion-view>
+    <!-- debut clubJoueursView --> 
+<!--<form name="clubJoueursForm" id="clubJoueursForm" method="POST" ng-submit="submitForm(clubJoueursForm.$invalid)" novalidate>
+	<div class="row">
+		    <ul class="nav nav-tabs" ng-repeat="menu in menus">
+		      <li ng-repeat="(key, value) in menu"  ng-class="activeClass('{{ value }}')"><a href="#{{ value }}">{{ key }}</a></li> 
+		    </ul>
+	</div>
+	<div class="row"  ng-controller="SportCtrl">
+		<table class="table table-striped table-condensed">
+		    <thead>
+		        <tr>
+		            <th>PHOTO:</th>
+		            <th>NOM:</th>
+		            <th>PRENOM:</th>
+		        </tr>
+				<tr>
+				<th>
+					<input class="noprint" type="search" ng-model="filtre1" placeholder="nom/prenom/date">
+				</th>
+				<th>			
+				</th>
+				<th></th>
+				</tr>
+		    </thead>
+		    <tbody>
+			        <tr ng-repeat="membre in membres | filter : filtre1" ng-click="choix(membre._id)">
+			            <td><img ng-src="uploads/{{membre.photo}}" width="100" height="100" /></td>
+			            <td>{{ membre.nom }}</td>
+			            <td>{{ membre.prenom }}</td>
+			            <td><a ng-click="details(liste.value._id)" class="btn btn-small btn-primary">DETAILS</a></td>
+			            <td><a ng-click="update(liste.value._id)" class="btn btn-small btn-danger">OK</a></td>
+			            <td><a ng-click="stat(liste.value.nom,liste.value.prenom)" class="btn btn-small btn-danger">TEST</a></td>
+			        </tr>
+	    		</tbody>
+		</table>
+	</div>
+	<div class="row">
+		<button type="button" class="btn btn-primary pull-right" ng-click="next2(choixClub.id,choixEquipe.nomEquipe)">Suivant</button>
+	</div>
+</form>
+  </ion-content>
+</ion-view><!--<ion-view view-title="Volley-Ball">
+  <ion-content>
+    <div class="row responsive-sm">
+	    <div class="col-sm-4"><button>Actualités</button></div>
+	    <div class="col-sm-4"><button>Clubs</button></div>
+	    <div class="col-sm-4"><button>Joueurs</button></div>
+    </div>
+  </ion-content>
+  <ion-content>
+    <ion-list>
+    <ion-toggle  ng-model="settings.actualites">
+        Actualités
+    </ion-toggle>
+    <ion-toggle  ng-model="settings.clubs">
+        Clubs
+    </ion-toggle>
+    <ion-toggle  ng-model="settings.joueurs">
+        Joueurs
+    </ion-toggle>
+    </ion-list>
+  </ion-content>
+</ion-view>-->

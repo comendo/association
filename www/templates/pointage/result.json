@@ -1,0 +1,392 @@
+{
+   "_id": "7d265fdf8d889665362ea059ea0018dc",
+   "_rev": "58-865f161b44eec369d6bd6b4c1b102b78",
+   "personnel": [
+       {
+           "id": "jouennemilinda09061987",
+           "checked": false,
+           "nom": "JOUENNE",
+           "prenom": "Milinda",
+           "naissance": "1987-06-05T22:00:00.000Z",
+           "adresse": "Résidence Scott, Appt n°,Marigot - 97800 SAINT MARTIN",
+           "email": "emilie@gmail.com",
+           "tel": "0690123654",
+           "face": "ben.png",
+           "poste": {
+               "pole": "administration",
+               "direction": "NC",
+               "lieu": "6 rue Léopold Mingau",
+               "raison": "",
+               "contenu_missions": "",
+               "intitule_poste": "Comptable",
+               "filiere": "",
+               "categorie": "",
+               "depuis_le": "",
+               "responsabilite_hier": "",
+               "nombre": "5",
+               "liens_fonctionnels": "",
+               "nombre_agents": "8",
+               "horaire_travail": "",
+               "intervention_hors_horaires": "",
+               "astreintes": "",
+               "lesquelles": "",
+               "missions_poste": [
+                   {
+                       "mission": "mission1 encore un test seb",
+                       "activite": "activite1 pour tester",
+                       "$$hashKey": "object:132"
+                   },
+                   {
+                       "mission": "dfsfsqfqsf",
+                       "activite": "gebrteztg",
+                       "$$hashKey": "object:133"
+                   },
+                   {
+                       "mission": "fgbdfbvgdsg",
+                       "activite": "dfbvsdfgs",
+                       "$$hashKey": "object:134"
+                   },
+                   {
+                       "mission": "aaaaaaaaaaaaaa",
+                       "activite": "aaaaaaaaaaaaaa",
+                       "$$hashKey": "object:273"
+                   },
+                   {
+                       "mission": "test mission 5",
+                       "activite": "activité mission 5",
+                       "$$hashKey": "object:458"
+                   }
+               ],
+               "modalites": "",
+               "moyens_materiels": "",
+               "protection_individuelle": "",
+               "condition_travail": "",
+               "moyen_materiel": "",
+               "amelioration": "",
+               "relation_travail_sup": "",
+               "relation_travail_int": "",
+               "relation_travail_ext": "",
+               "savoir_connaissance": "",
+               "savoir_faire": "",
+               "savoir_etre": "",
+               "mission": "",
+               "objectifs_2016-2017": "",
+               "date_signature_salarie": "",
+               "date_signature_directeur": "",
+               "service": "Administration",
+               "nomprenom": "JOUENNE Milinda"
+           },
+           "observations": "RAS",
+           "presence": [
+           ]
+       },
+       {
+           "id": "doquetsebastien23071980",
+           "checked": false,
+           "nom": "DOQUET",
+           "prenom": "Sébastien",
+           "adresse": "Lot. 27, Appt. C, Les Hauts de Concordia - 97800 SAINT MARTIN",
+           "email": "doquet.sebastien@gmail.com",
+           "tel": "0690888708",
+           "face": "ben.png",
+           "poste": {
+               "pole": "administration",
+               "direction": "NC",
+               "lieu": "6 rue léopold Mingau",
+               "raison": "",
+               "contenu_missions": "",
+               "intitule_poste": "Responsable administratif polyvalente",
+               "filiere": "",
+               "categorie": "",
+               "depuis_le": "",
+               "responsabilite_hier": "",
+               "nombre": "5",
+               "liens_fonctionnels": "",
+               "nombre_agents": "",
+               "horaire_travail": "8h-15h30",
+               "intervention_hors_horaires": "",
+               "astreintes": "",
+               "lesquelles": "",
+               "missions_poste": [
+                   {
+                       "mission": "",
+                       "activites": ""
+                   },
+                   {
+                       "mission": "",
+                       "activites": ""
+                   },
+                   {
+                       "mission": "",
+                       "activites": ""
+                   }
+               ],
+               "modalites": "",
+               "moyens_materiels": "",
+               "protection_individuelle": "",
+               "condition_travail": "très souvent solliciter",
+               "moyen_materiel": "",
+               "amelioration": "",
+               "relation_travail_sup": "",
+               "relation_travail_int": "",
+               "relation_travail_ext": "",
+               "savoir_connaissance": "",
+               "savoir_faire": "",
+               "savoir_etre": "",
+               "mission": "réorganiser l'ACED",
+               "objectifs": "",
+               "date_signature_salarie": "",
+               "date_signature_directeur": "",
+               "service": "Administration"
+           },
+           "obsevations": "RAS",
+           "presence": [
+           ],
+           "naissance": "1980-07-22T22:00:00.000Z"
+       },
+       {
+           "nom": "Marcenat",
+           "prenom": "Fabienne",
+           "naissance": "1994-12-11T23:00:00.000Z",
+           "adresse": "Concordia",
+           "email": "mar.fab@gmail.com",
+           "tel": "0690112233",
+           "id": "MarcenatFabienneSunDec111994",
+           "face": "MarcenatFabienneSunDec111994.jpg",
+           "poste": {
+               "service": "Insertion",
+               "lieu": "6 rue Léopold MINGAU, 97150 Saint Martin",
+               "intitule_poste": "CIP"
+           }
+       }
+   ],
+   "reunion": [
+       {
+           "titre": "Compte Rendu de la Réunion du 11 Juillet 2016",
+           "intitule": "Gestion de l’Association pour l’Année 2016-2017",
+           "objectif": "Favoriser une meilleure organisation et gestion de la prochaine année scolaire",
+           "date": "Lundi 11 Juillet 2016",
+           "lieu": "Locaux de l’Association ACED, Bureau du Pôle Administratif",
+           "participants": [
+               "La Présidente : Mme Audrey CLAXTON",
+               "Coordinatrice du Pôle Animation : Mme Rosine LAGUERRE",
+               "Coordinatrice du Pôle Médiation Sociale : Mme Bertina JONES",
+               "Coordinatrice du Pôle Insertion, Espaces verts : Mme Fabienne MARCENAT",
+               "Trésorière : Mme Milinda JOUENNE"
+           ],
+           "absents": [
+               "La Directrice : Mme Catherine CARMONT congé maternité",
+               "Le Responsable Administratif : M. Sébastien DOQUET"
+           ],
+           "redacteur": "Mme Fabienne MARCENAT",
+           "valide_corrige": "Mme La Présidente : Mme Audrey CLAXTON21/07/2016",
+           "ordre": "diffusion",
+           "ouverture_seance": "15h15",
+           "fermeture_seance": "16h30",
+           "ordre_du_jour": [
+               {
+                   "intitule": "Organisation de l’Association",
+                   "information": [
+                       "Traçabilité et contrôle du personnel"
+                   ],
+                   "action": [
+                       "Cahiers de présence journaliers à réaliser pour chaque Pôle",
+                       "Création de Groupe chat par les Coordinatrices pour les communications"
+                   ]
+               },
+               {
+                   "intitule": "Formation Internes",
+                   "information": [
+                       "Mise en place de Formation Interne pour tous les salariés de la structure pour le rentrée 2016/2017.Cette formation aura lieu tous les mercredis matins."
+                   ],
+                   "action": [
+                       "Vérifications des plannings afin de proposer les horaires d’interventions",
+                       "Cours de Français :Mme Bertina JONES",
+                       "Cours de Mathématiques et Informatiques : M. Sébastien DOQUET",
+                       "Animation et Législation : Mme Rosine LAGUERRE",
+                       "Insertion Professionnelle",
+                       "Recherche d’emploi et de formationCAF/ CMU : Mme Fabienne MARCENAT"
+                   ]
+               },
+               {
+                   "intitule": "Bilan Semestriel",
+                   "information": [
+                       "Bilan Semestriel de Janvier à Juin 2016 :Date d’échéance pour l’envoi Avant le 15 Août 2016"
+                   ],
+                   "action": [
+                       "Envoi par courriel à la Présidente avant la date butoir"
+                   ]
+               },
+               {
+                   "intitule": "Congés et Heures Supplémentaires",
+                   "information": [
+                       "Modalité Congés payés :"
+                   ],
+                   "action": [
+                       "Le formulaire de demande de congés est à remplir et remettre 1 Mois en Avance, à partir du mois de Septembre 2016.Il est indispensable de finir à l’heure.Les autorisations d’absence et de sortie sont à transmettre aux Coordinatrices, qui remettront au Pôle administratif pour validation"
+                   ]
+               },
+               {
+                   "intitule": "Congés et Heures Supplémentaires",
+                   "information": [
+                       "Heures supplémentaire : Aucunes heures supplémentaires seront validée "
+                   ],
+                   "action": [
+                       "La ou les heures supplémentaires sont les heures de travail effectuées au-delà de la durée légale du travail fixée à 35 heures hebdomadaires (ou de la durée considérée comme équivalente dans certaines professions), à la demande de l’employeur ou avec son accord, même implicite."
+                   ]
+               },
+               {
+                   "intitule": "Pôle Administratif",
+                   "information": [
+                       "Fiche de poste"
+                   ],
+                   "action": [
+                       "Fiche de Poste en cours de modifications pour signature avant la rentrée prochaine."
+                   ]
+               },
+               {
+                   "intitule": "Pôle animation",
+                   "information": [
+                       "Planning nécessaire pour les interventions à la Banque postale"
+                   ],
+                   "action": [
+                       "Réaliser le Planning du 01 au 14 Août 2016, Médiation La Banque Postale selon la disponibilité des animateurs. A remettre à Mme Jones."
+                   ]
+               },
+               {
+                   "intitule": "Pôle Insertion Espace verts",
+                   "information": [
+                       "Bilan Semestriel à remettre"
+                   ],
+                   "action": [
+                       "Melle MARCENAT  doit Prendre contact avec Mme Massolin pour envoyer à la Présidente, le bilan semestriel."
+                   ]
+               },
+               {
+                   "intitule": "Pôle Médidation social",
+                   "information": [
+                       "Mme Jones continuera d’assurer la communication entre l’ACED et la Banque Postale concernant notre marché."
+                   ],
+                   "action": ""
+               }
+           ]
+       },
+       {
+           "titre": "Compte Rendu de la Réunion du 15 Juillet 2016",
+           "intitule": "Gestion de l’Association pour l’Année 2016-2017",
+           "objectif": "Favoriser une meilleure organisation et gestion de la prochaine année scolaire",
+           "date": "Lundi 11 Juillet 2016",
+           "lieu": "Locaux de l’Association ACED, Bureau du Pôle Administratif",
+           "participants": [
+               "La Présidente : Mme Audrey CLAXTON",
+               "Coordinatrice du Pôle Animation : Mme Rosine LAGUERRE",
+               "Coordinatrice du Pôle Médiation Sociale : Mme Bertina JONES",
+               "Coordinatrice du Pôle Insertion, Espaces verts : Mme Fabienne MARCENAT",
+               "Trésorière : Mme Milinda JOUENNE"
+           ],
+           "absents": [
+               "La Directrice : Mme Catherine CARMONT congé maternité",
+               "Le Responsable Administratif : M. Sébastien DOQUET"
+           ],
+           "redacteur": "Mme Fabienne MARCENAT",
+           "valide_corrige": "Mme La Présidente : Mme Audrey CLAXTON21/07/2016",
+           "ordre": "diffusion",
+           "ouverture_seance": "15h15",
+           "fermeture_seance": "16h30",
+           "ordre_du_jour": [
+               {
+                   "intitule": "Organisation de l’Association",
+                   "information": [
+                       "Traçabilité et contrôle du personnel"
+                   ],
+                   "action": [
+                       "Cahiers de présence journaliers à réaliser pour chaque Pôle",
+                       "Création de Groupe chat par les Coordinatrices pour les communications"
+                   ]
+               },
+               {
+                   "intitule": "Formation Internes",
+                   "information": [
+                       "Mise en place de Formation Interne pour tous les salariés de la structure pour le rentrée 2016/2017.Cette formation aura lieu tous les mercredis matins."
+                   ],
+                   "action": [
+                       "Vérifications des plannings afin de proposer les horaires d’interventions",
+                       "Cours de Français :Mme Bertina JONES",
+                       "Cours de Mathématiques et Informatiques : M. Sébastien DOQUET",
+                       "Animation et Législation : Mme Rosine LAGUERRE",
+                       "Insertion Professionnelle",
+                       "Recherche d’emploi et de formationCAF/ CMU : Mme Fabienne MARCENAT"
+                   ]
+               },
+               {
+                   "intitule": "Bilan Semestriel",
+                   "information": [
+                       "Bilan Semestriel de Janvier à Juin 2016 :Date d’échéance pour l’envoi Avant le 15 Août 2016"
+                   ],
+                   "action": [
+                       "Envoi par courriel à la Présidente avant la date butoir"
+                   ]
+               },
+               {
+                   "intitule": "Congés et Heures Supplémentaires",
+                   "information": [
+                       "Modalité Congés payés :"
+                   ],
+                   "action": [
+                       "Le formulaire de demande de congés est à remplir et remettre 1 Mois en Avance, à partir du mois de Septembre 2016.Il est indispensable de finir à l’heure.Les autorisations d’absence et de sortie sont à transmettre aux Coordinatrices, qui remettront au Pôle administratif pour validation"
+                   ]
+               },
+               {
+                   "intitule": "Congés et Heures Supplémentaires",
+                   "information": [
+                       "Heures supplémentaire : Aucunes heures supplémentaires seront validée "
+                   ],
+                   "action": [
+                       "La ou les heures supplémentaires sont les heures de travail effectuées au-delà de la durée légale du travail fixée à 35 heures hebdomadaires (ou de la durée considérée comme équivalente dans certaines professions), à la demande de l’employeur ou avec son accord, même implicite."
+                   ]
+               },
+               {
+                   "intitule": "Pôle Administratif",
+                   "information": [
+                       "Fiche de poste"
+                   ],
+                   "action": [
+                       "Fiche de Poste en cours de modifications pour signature avant la rentrée prochaine."
+                   ]
+               },
+               {
+                   "intitule": "Pôle animation",
+                   "information": [
+                       "Planning nécessaire pour les interventions à la Banque postale"
+                   ],
+                   "action": [
+                       "Réaliser le Planning du 01 au 14 Août 2016, Médiation La Banque Postale selon la disponibilité des animateurs. A remettre à Mme Jones."
+                   ]
+               },
+               {
+                   "intitule": "Pôle Insertion Espace verts",
+                   "information": [
+                       "Bilan Semestriel à remettre"
+                   ],
+                   "action": [
+                       "Melle MARCENAT  doit Prendre contact avec Mme Massolin pour envoyer à la Présidente, le bilan semestriel."
+                   ]
+               },
+               {
+                   "intitule": "Pôle Médidation social",
+                   "information": [
+                       "Mme Jones continuera d’assurer la communication entre l’ACED et la Banque Postale concernant notre marché."
+                   ],
+                   "action": ""
+               }
+           ]
+       }
+   ],
+   "date_full": "mercredi 24 août 2016 00:18",
+   "date": "24/08/2016",
+   "jour_mois": "24",
+   "jour_semaine": "mercredi",
+   "mois": "août",
+   "annee": "2016",
+   "heure": "00:18"
+}

@@ -1,0 +1,234 @@
+<ion-view view-title="FICHE DE POSTE-{{ retour }}">
+  <ion-content>
+<div class="list">
+<form>
+  <div class="item item-divider">
+    INFORMATION G&Eacute;N&Eacute;RALE SUR LE POSTE :
+  </div>
+  <label class="item item-input">
+    <span class="input-label">P&ocirc;le :</span>
+    <select ng-model="poste.service">
+		<option ng-repeat="service in services">{{service}}</option>
+	</select>
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Direction :</span>
+    <input ng-model="poste.direction" ng-change="sock(poste)" type="text" placeholder="Direction">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Lieu de travail :</span>
+    <input ng-model="poste.lieu" ng-change="sock(poste)" type="text" placeholder="Lieu de travail">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Raison d&apos;&ecirc;tre du poste :</span>
+    <input ng-model="poste.raison" ng-change="sock(poste)" type="text" placeholder="Raison d&apos;&ecirc;tre du poste">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Contenu g&eacute;n&eacute;ral des missions :</span>
+    <input ng-model="poste.contenu_missions" ng-change="sock(poste)" type="text" placeholder="Contenu g&eacute;n&eacute;ral des missions">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Intitul&eacute; du poste :</span>
+    <input ng-model="poste.intitule_poste" ng-change="sock(poste)" type="text" placeholder="Intitul&eacute; du poste">
+  </label>
+  <div class="item item-divider">
+    INFORMATION ADMINISTRATIVE :
+  </div>
+  <label class="item item-input">
+    <span class="input-label">Nom et pr&eacute;nom du salari&eacute; en place sur le poste :</span>
+    <input ng-model="poste.nomprenom" ng-change="sock(poste)" type="text" placeholder="Nom et pr&eacute;nom du salari&eacute; en place sur le poste">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Fili&egrave;re:</span>
+    <input ng-model="poste.filiere" ng-change="sock(poste)" type="text" placeholder="Fili&egrave;re">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Cat&eacute;gorie:</span>
+    <input ng-model="poste.categorie" ng-change="sock(poste)" type="text" placeholder="Cat&eacute;gorie">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Depuis le :</span>
+    <input ng-model="poste.depuis_le" ng-change="sock(poste)" type="text" placeholder="Depuis le">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Responsabilit&eacute; hi&eacute;rarchique :</span>
+    <ion-radio ng-model="responsabilite_hier" ng-value="'oui'">Oui</ion-radio>
+  	<ion-radio ng-model="responsabilite_hier" ng-value="'non'">Non</ion-radio>
+  </label>
+  <div ng-switch="responsabilite_hier">
+  	<div ng-switch-when="oui">
+	   	<label class="item item-input">
+	    	<span class="input-label">nombre de salari&eacute;s encadr&eacute;s :</span>
+	    	<input ng-model="poste.nombre" ng-change="sock(poste)" type="text" placeholder="nombre de salari&eacute;s encadr&eacute;s">
+	  	</label>
+	</div>
+	<div ng-switch-when="non"></div>
+  	<div ng-switch-default></div>
+  </div>
+  <label class="item item-input">
+    <span class="input-label">Liens fonctionnels :</span>
+    <ion-radio ng-model="liens_fonctionnels" ng-value="'oui'">Oui</ion-radio>
+  	<ion-radio ng-model="liens_fonctionnels" ng-value="'non'">Non</ion-radio>
+  </label>
+  <div ng-switch="liens_fonctionnels">
+  	<div ng-switch-when="oui">
+	   	<label class="item item-input">
+	    	<span class="input-label">nombre d&apos;agents concern&eacute;s :</span>
+	    	<input ng-model="poste.nombre_agents" ng-change="sock(poste)" type="text" placeholder="nombre d&apos;agents concern&eacute;s">
+	  	</label>
+	</div>
+	<div ng-switch-when="non"></div>
+  	<div ng-switch-default></div>
+  </div>
+  <label class="item item-input">
+    <span class="input-label">Horaires de travail :</span>
+    <input ng-model="poste.horaire_travail" ng-change="sock(poste)" type="text" placeholder="8h-15h30 (pause m&eacute;ridienne : 30 min)">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Interventions hors horaires de travail :</span>
+    <input ng-model="poste.intervention_hors_horaires" ng-change="sock(poste)" type="text" placeholder="selon planning des activit&eacute;s culturelles...(en soir&eacute;e apr&egrave;s 15h30, samedi, dimanche)">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Astreintes :</span>
+    <ion-radio ng-model="astreintes" ng-value="'oui'">Oui</ion-radio>
+  	<ion-radio ng-model="astreintes" ng-value="'non'">Non</ion-radio>
+  </label>
+  <div ng-switch="astreintes">
+  	<div ng-switch-when="oui">
+	   	<label class="item item-input">
+	    	<span class="input-label">Lesquelles :</span>
+	    	<input ng-model="poste.lesquelles" ng-change="sock(poste)" type="text" placeholder="lesquelles">
+	  	</label>
+	</div>
+	<div ng-switch-when="non"></div>
+  	<div ng-switch-default></div>
+  </div>
+  <div class="item item-divider">
+    LES MISSIONS DU POSTE :
+  </div>
+  <label class="item item-input">
+    <span class="input-label">Mission l :</span>
+    <input ng-model="poste.mission_poste1" ng-change="sock(poste)" type="text" placeholder="mission 1">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Activit&eacute; l :</span>
+    <input ng-model="poste.activite_poste1" ng-change="sock(poste)" type="text" placeholder="activit&eacute; 1">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Mission 2 :</span>
+    <input ng-model="poste.mission_poste2" ng-change="sock(poste)" type="text" placeholder="mission 2">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Activit&eacute; 2 :</span>
+    <input ng-model="poste.activite_poste2" ng-change="sock(poste)" type="text" placeholder="activit&eacute; 2">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Mission 3 :</span>
+    <input ng-model="poste.mission_poste3" ng-change="sock(poste)" type="text" placeholder="mission 3">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Activit&eacute; 3 :</span>
+    <input ng-model="poste.activite_poste3" ng-change="sock(poste)" type="text" placeholder="activit&eacute; 3">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Mission 4 :</span>
+    <input ng-model="poste.mission_poste4" ng-change="sock(poste)" type="text" placeholder="mission 4">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Activit&eacute; 4 :</span>
+    <input ng-model="poste.activite_poste4" ng-change="sock(poste)" type="text" placeholder="activit&eacute; 4">
+  </label>
+  <div class="item item-divider">
+    LES MODALIT&Eacute;S D&apos;EXERCICES DU POSTE :
+  </div>
+  <label class="item item-input">
+    <span class="input-label">Les moyens mat&eacute;riels :</span>
+    <input ng-model="poste.moyen_materiel" ng-change="sock(poste)" type="text" placeholder="Les moyens mat&eacute;riels">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">L&apos;&eacute;quipement de protection individuelle :</span>
+    <input ng-model="poste.protection_individuelle" ng-change="sock(poste)" type="text" placeholder="L&apos;&eacute;quipement de protection individuelle">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Les conditions de travail et les contraintes du poste
+ :</span>
+    <input ng-model="poste.condition_travail" ng-change="sock(poste)" type="text" placeholder="Les conditions de travail et les contraintes du poste">
+   </label>
+    <label class="item item-input">
+    <span class="input-label">Les am&eacute;liorations  &agrave; envisager :</span>
+    <input ng-model="poste.amelioration" ng-change="sock(poste)" type="text" placeholder="Les am&eacute;liorations  &agrave; envisager">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Les relations au travail avec les sup&eacute;rieurs:</span>
+    <input ng-model="poste.relation_travail_sup" ng-change="sock(poste)" type="text" placeholder="Les relations au travail avec les sup&eacute;rieurs">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Les relations au travail avec les personnes internes:</span>
+    <input ng-model="poste.relation_travail_int" ng-change="sock(poste)" type="text" placeholder="Les relations au travail avec les personnes internes">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Les relations au travail avec les personnes externes:</span>
+    <input ng-model="poste.relation_travail_ext" ng-change="sock(poste)" type="text" placeholder="Les relations au travail avec les personnes externes">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Les documents de r&eacutesf&eacute;rents :</span>
+    <input ng-model="poste.relation_travail_ext" ng-change="sock(poste)" type="text" placeholder="Les documents de r&eacute;f&eacute;rents">
+  </label>
+  <div class="item item-divider">
+    LES COMPETENCES REQUISE PAR LE POSTE :
+  </div>
+  <label class="item item-input">
+    <span class="input-label">Savoir et connaissance :</span>
+    <input ng-model="poste.savoir_connaissance" ng-change="sock(poste)" type="text" placeholder="Savoir et connaissance">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Savoir-faire :</span>
+    <input ng-model="poste.savoir_faire" ng-change="sock(poste)" type="text" placeholder="Savoir-faire">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Savoir-&ecirc;tre :</span>
+    <input ng-model="poste.savoir_etre" ng-change="sock(poste)" type="text" placeholder="Savoir-&ecirc;tre">
+  </label>
+  <div class="item item-divider">
+    LES OBJECTIFS 2016-2017 :
+  </div>
+  <label class="item item-input">
+    <span class="input-label">Missions :</span>
+    <textarea ng-model="poste.mission" placeholder="Missions"></textarea>
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Objectifs 2016-2017 :</span>
+    <textarea ng-model="poste.objectifs" placeholder="Objectifs 2016-2017"></textarea>
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Signature salari&eacute; :</span>
+    <input ng-model="poste.date_signature_salarie" ng-change="sock(poste)" type="text" placeholder="Signature salari&eacute;">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Signature directeur :</span>
+    <input ng-model="poste.date_signature_directeur" ng-change="sock(poste)" type="text" placeholder="Signature directeur;">
+  </label>
+  <label class="item item-input">
+    <div class="padding item item-input">
+		<button type="button" class="button button-block button-positive" id="submit" ng-click="submitForm(poste)">Ajouter</button>
+	</div>
+  </label> 
+</form>
+</div>   
+  </ion-content>
+<div class="tabs">
+  <a class="tab-item" href="#app/personnel/all">
+    Liste personnel
+  </a>
+  <a class="tab-item" href="#app/personnel/edit/{{ persoId }}">
+    Modifier
+  </a>
+  <!--<a class="tab-item" onclick="javascript:window.print()" ng-click="test()">--> 
+  <a class="tab-item" ng-click="test()">  
+    Imprimer
+  </a>
+  <a class="tab-item" ng-click="sock()">  
+    socket
+  </a>
+</div>
+</ion-view>

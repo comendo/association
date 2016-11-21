@@ -1,0 +1,56 @@
+<ion-view view-title="Informations personnelles">
+  <ion-content>
+<div class="list" id="tout"> 
+<form>
+  <div class="item item-divider">
+    INFORMATIONS PERSONNELLES DE {{ personnel.nom }} {{ personnel.prenom }}:
+  </div>
+  <label class="item item-input">
+    <span class="input-label">Nom :</span>
+    <input readonly ng-model="personnel.nom" type="text">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Prenom :</span>
+    <input readonly ng-model="personnel.prenom" type="text">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Date de naissance :</span>
+    <input readonly ng-model="personnel.naissance" value="personnel.naissance | date:'dd/MM/yyyy'" type="date" min="1939-12-31" max="2012-12-31">
+  </label>
+  <label class="item item-input">
+  	<span class="input-label">Adresse :</span>
+    <input readonly ng-model="personnel.adresse" type="text">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">E-mail :</span>
+    <input readonly ng-model="personnel.email" type="text">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">T&eacute;l&eacute;phone :</span>
+    <input readonly ng-model="personnel.tel" type="text"> 
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Photo :</span>
+    <!--<input readonly type="button" ng-click="takeImage()" value="Take Photo Image"/>-->
+<img ng-src="img/personnel/{{personnel.face || 'logo_aced_cl.png'}}" id="srcImage" height="100px" width="100px"/>						
+  </label>
+  <!--<label class="item item-input">
+    <div class="padding item item-input">
+		<button type="button" class="button button-block button-positive" id="submit" ng-click="submitForm(personnel)">Ajouter</button>
+	</div>
+  </label> -->
+</form>
+</div>   
+<div class="tabs">
+  <a class="tab-item" href="#app/personnel/all">
+    Liste personnel
+  </a>
+  <a class="tab-item" href="#app/personnel/informations/update/{{ personnel.id }}">
+    Modifier
+  </a>
+  <a class="tab-item" ng-click="printDiv('tout')">  
+    Imprimer 
+  </a>
+</div>
+  </ion-content>
+</ion-view>

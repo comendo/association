@@ -1,0 +1,50 @@
+<script id="new-joueur.html" type="text/ng-template">
+  <div class="modal">
+
+    <!-- Modal header bar -->
+    <ion-header-bar class="bar-secondary">
+      <h1 class="title">Nouveau joueur</h1>
+      <button class="button button-clear button-positive" ng-click="closeNewPlayer()">Cancel</button>
+    </ion-header-bar>
+
+    <!-- Modal content area -->
+    <ion-content>
+
+      <form ng-submit="createJoueur(joueur)">
+        <div class="list">
+          <!--<label class="item item-input">{{"labelNom" | translate}}:
+            <input type="text" placeholder="Nom" ng-model="joueur.nom">
+          </label>
+          <label class="item item-input">{{"labelPrenom" | translate}}:
+			<input type="text" placeholder="Prenom" ng-model="joueur.prenom">
+		  </label>-->
+		  <label class="item item-input">{{"labelNom" | translate}}:
+            <input type="text" placeholder="Nom" ng-model="nom">
+          </label>
+          <label class="item item-input">{{"labelPrenom" | translate}}:
+			<input type="text" placeholder="Prenom" ng-model="prenom">
+		  </label>
+		  <fieldset>
+							<label for="photo">{{"labelPhoto" | translate}}:</label>
+						    <div ngf-drop ngf-select ng-model="files" class="drop-box" 
+						        ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true"
+						        accept="image/*,application/pdf" 
+						        ngf-pattern="'image/*,application/pdf'">Drop pdfs or images here or click to upload</div>
+						    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+						    Files: 
+						    <ul>
+						        <li name="file" ng-repeat="f in files" style="font:smaller">{{f.name}} {{f.$error}} {{f.$errorParam}}</li>
+						    </ul>
+						    <img ngf-src="!files[0].$error && files[0]" width="100" height="100">
+						</fieldset>
+        </div>
+        <div class="padding">
+          <button type="submit" class="button button-block button-positive">Ajouter joueur</button>
+        </div>
+      </form>
+
+    </ion-content>
+
+  </div>
+
+</script>

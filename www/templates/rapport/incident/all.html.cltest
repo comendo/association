@@ -1,0 +1,29 @@
+<ion-view view-title="Liste des rapports">
+  <ion-content>
+    <ion-list>
+    	<div class="item row"> 
+          <div class="col">Tous les rapports</div>
+          <div class="col">{{ date.date_full}}</div>
+        </div>
+      <ion-item class="item item-input"><input type="text" ng-model="filtre"></ion-item>
+      <ion-item class="item-avatar item-icon-right" ng-repeat="personnel in personnels | filter:filtre" type="item-text-wrap" ng-click="login(personnel.id)">
+        <img ng-src="img/personnel/{{personnel.face}}">
+			<h2>{{personnel.nom}} {{personnel.prenom}}</h2>
+			<p>{{personnel.poste.intitule_poste}}</p>
+			<div>date:{{personnel.presence[0].date.date}}</div>
+			<div>Heure arrivée:{{personnel.presence[0].ha}}</div>
+			<div>Début pause:{{personnel.presence[0].dp}}</div>
+			<div>fin pause:{{personnel.presence[0].fp}}</div>
+			<div>heure départ:{{personnel.presence[0].hd}}</div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <div class="tabs">
+  <a class="tab-item" href="#app/home">
+    Accueil
+  </a>
+  <a class="tab-item button-full button-positive" href="#app/rapport/add">
+     Ajouter un rapport;
+  </a>
+  </div>
+</ion-view>

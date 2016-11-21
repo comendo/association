@@ -1,0 +1,66 @@
+<ion-view view-title="Liste du personnel">
+  <ion-content>
+    <ion-list>
+    	<div class="item row"> 
+          <div class="col">Personnel ACED/COBRACED</div>
+          <div class="col">{{ date.date_full}}</div>
+        </div>
+	    <div style="padding: 0px 15px;" class="table-container responsive-sm">
+			<!--<h1> {{'titleSearch' | translate}}</h1>-->
+			<div class="row">
+				<input class="noprint col-50" type="search" ng-model="filtre1" placeholder="Rechercher par">
+				<input class="noprint col-50" type="search" ng-model="filtre2" placeholder="et Rechercher par">
+			</div> 
+		</div> 
+		
+		<div style="padding: 0px 15px;"  class="table-container responsive-sm">
+			<div ng-controller="personnelAllCtrl as demo">
+			 	<ul class="list-inline row" ng-cloak> 
+		       		<li class="col" ng-repeat="col in demo.cols track by col.title" style="min-width: 100px">
+		          		<a href="" ng-click="demo.move(col,$index,-1)">
+		            		<span ng-show="!$first" class="glyphicon glyphicon-arrow-left"></span>
+		          		</a>
+		          		<input type="checkbox" ng-model="col.show"/>{{col.title}}
+		          		<a href="" ng-click="demo.move(col,$index, 1)">
+		            		<span ng-show="!$last" class="glyphicon glyphicon-arrow-right"></span> 
+		         		</a>
+		        	</li> 
+		      	</ul>
+				<hr> 
+				<div id="tout">
+				<img alt="" src="img/image00.png" style="width: 78.55px; height: 84.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+				<img alt="" src="img/image01.png" style="width: 78.55px; height: 84.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+				<table ng-table-dynamic="demo.tableParams with demo.cols" class="table table-condensed table-bordered table-striped">
+		        	<tr ng-repeat="row in simpleList | filter:filtre1 | filter:filtre2">
+		        	<td ng-click="details(row['id'])" data-title-text="N°">{{ $index+1 }}</td>
+ 
+		          		<td ng-repeat="col in $columns" ng-click="details(row['id'])">
+			          		<!--<span ng-if="col.field == 'numero'">{{ $index + 1 }}</span>-->
+			          		<span ng-if="col.field == 'naissance'">{{ row[col.field]  | date:'dd/MM/yyyy'}}</span>
+			          		
+			          		<div class="item-icon-right" ng-if="col.field == 'face'"><center>
+			          		<!--<img width="100" height="100" ng-src="img/personnel/{{row[col.field] || 'logo_aced_cl.png'}}" />-->
+			          		<img width="100" height="100" src="https://firebasestorage.googleapis.com/v0/b/comendo-asso.appspot.com/o/personnel%2F{{row[col.field] || 'logo_aced_cl.png'}}?alt=media&token=a71dfd0a-54c5-4d3b-8e1d-a61595331950" />
+			          		</center></div>
+			          		<div ng-if="col.field == 'poste.pole'" ng-repeat="(k,v) in row['poste']"><span ng-if="k == 'pole'">{{ v }}</span></div>
+			          		<span ng-if="col.field != 'face' && col.field != 'naissance'">{{ row[col.field] }}</span>
+          				</td>
+		        	</tr>
+		    	</table>
+		    	</div>
+			</div>
+		</div>
+    </ion-list>
+  </ion-content>
+  <div class="tabs">
+  <a class="tab-item" href="#app/home">
+    Accueil
+  </a>
+  <a class="tab-item button-full button-positive" href="#app/personnel/informations/add">
+     Ajouter un employ&eacute;
+  </a>
+  <a class="tab-item" ng-click="printDiv('tout')">  
+    Imprimer 
+  </a>
+  </div>
+</ion-view>

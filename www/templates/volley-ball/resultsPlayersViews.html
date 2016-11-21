@@ -1,0 +1,163 @@
+<ion-view view-title="Résultats">
+  <ion-content>
+	<div  class="row" ng-controller="resultsPlayersController as demo">
+ 	<div class="col" id="visualization"></div>
+ 	</div>
+ 	<div class="row">
+	<table class="col">
+		<thead>
+		<tr>
+			<th colspan="2">Services</th>
+		</tr>
+		<tr>
+			<th>Joueurs</th>
+			<th>Points</th>
+		</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="player in players | orderBy:'-statistiques.servicePoint'">
+		        <td>{{player.nom}} {{player.prenom}}</td>
+		        <td>{{ player.statistiques.servicePoint}}</td>
+		    </tr>
+	    </tbody>
+	</table>
+	<table class="col" style="float: left;">
+		<thead>
+		<tr>
+			<th colspan="2">Attaques</th>
+		</tr>
+		<tr>
+			<th>Joueurs</th>
+			<th>Points</th>
+		</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="player in players | orderBy:'-statistiques.attaquePoint'">
+		        <td>{{player.nom}} {{player.prenom}}</td>
+		        <td>{{ player.statistiques.attaquePoint}}</td>
+		    </tr>
+	    </tbody>
+	</table>
+    <table class="col" style="float: left;">
+		<thead>
+		<tr>
+			<th colspan="2">Contre</th>
+		</tr>
+		<tr>
+			<th>Joueurs</th>
+			<th>Points</th>
+		</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="player in players | orderBy:'-statistiques.contrePoint'">
+		        <td>{{player.nom}} {{player.prenom}}</td>
+		        <td>{{ player.statistiques.contrePoint}}</td>
+		    </tr>
+	    </tbody>
+	</table>
+    
+</div>
+    <div class="row">
+	<table class="col">
+		<thead>
+		<tr>
+			<th colspan="2">Reception</th>
+		</tr>
+		<tr>
+			<th>Joueurs</th>
+			<th>Points</th>
+		</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="player in players | orderBy:'-statistiques.receptionPoint'">
+		        <td>{{player.nom}} {{player.prenom}}</td>
+		        <td>{{ player.statistiques.receptionPoint}}</td>
+		    </tr>
+	    </tbody>
+	</table>
+	<table class="col" style="float: left;">
+		<thead>
+		<tr>
+			<th colspan="2">Defense</th>
+		</tr>
+		<tr>
+			<th>Joueurs</th>
+			<th>Points</th>
+		</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="player in players | orderBy:'-statistiques.defensePoint'">
+		        <td>{{player.nom}} {{player.prenom}}</td>
+		        <td>{{ player.statistiques.defensePoint}}</td>
+		    </tr>
+	    </tbody>
+	</table>
+    <table class="col" style="float: left;">
+		<thead>
+		<tr>
+			<th colspan="2">Soutien</th>
+		</tr>
+		<tr>
+			<th>Joueurs</th>
+			<th>Points</th>
+		</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="player in players | orderBy:'-statistiques.soutienPoint'">
+		        <td>{{player.nom}} {{player.prenom}}</td>
+		        <td>{{ player.statistiques.soutienPoint}}</td>
+		    </tr>
+	    </tbody>
+	</table>
+    
+</div>
+     <div class="row">
+	<table class="col">
+		<thead>
+		<tr>
+			<th colspan="2">Relance</th>
+		</tr>
+		<tr>
+			<th>Joueurs</th>
+			<th>Points</th>
+		</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="player in players | orderBy:'-statistiques.relancePoint'">
+		        <td>{{player.nom}} {{player.prenom}}</td>
+		        <td>{{ player.statistiques.relancePoint}}</td>
+		    </tr>
+	    </tbody>
+	</table>
+	<table class="col" style="float: left;">
+		<thead>
+		<tr>
+			<th colspan="2">Passe</th>
+		</tr>
+		<tr>
+			<th>Joueurs</th>
+			<th>Points</th>
+		</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="player in players | orderBy:'-statistiques.passePoint'">
+		        <td>{{player.nom}} {{player.prenom}}</td>
+		        <td>{{ player.statistiques.passePoint}}</td>
+		    </tr>
+	    </tbody>
+	</table>
+</div>
+    
+  </ion-content>
+<div class="tabs">
+  <a class="tab-item" href="#app/Volley-Ball/statistiques/presence">
+    presence
+  </a>
+  <a class="tab-item" href="#app/Volley-Ball/statistiques/add">
+    statistiques
+  </a>
+  <a class="tab-item" href="#app/Volley-Ball/statistiques/results">
+    resultats
+  </a>
+</div>
+</ion-view>

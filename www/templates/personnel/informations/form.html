@@ -1,0 +1,71 @@
+<ion-view view-title="Ajouter employ&eacute;">
+  <ion-content>
+<div class="list">
+<form>
+  <label class="item item-input">
+    <span class="input-label">Nom :</span>
+    <input ng-model="personnel.nom" type="text" placeholder="Nom">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Prenom :</span>
+    <input ng-model="personnel.prenom" type="text" placeholder="Prenom">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Date de naissance :</span>
+    <input ng-model="personnel.naissance" value="personnel.naissance | date:'dd/MM/yyyy'" type="date" min="1939-12-31" max="2012-12-31">
+  </label>
+  <label class="item item-input">
+  	<span class="input-label">Adresse :</span>
+    <input ng-model="personnel.adresse" type="text" placeholder="Adresse">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">E-mail :</span>
+    <input ng-model="personnel.email" type="text" placeholder="E-mail">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">T&eacute;l&eacute;phone :</span>
+    <input ng-model="personnel.tel" type="text" placeholder="T&eacute;l&eacute;phone">
+  </label>
+  <!--<label class="item item-input">
+    <span class="input-label">Photo1 :</span>
+	<input ng-model="personnel.face" type="file" id="file" name="file"/>				
+  </label>-->
+  <label class="item item-input">
+    <span class="input-label">Photo :</span>
+	<div>
+    <input type="file" file-model="myFile" id="file"/>
+    <img ng-src="img/personnel/{{personnel.face || 'logo_aced_cl.png'}}" id="srcImage" height="100px" width="100px"/>
+</div>			
+  </label>
+ <!-- <label class="item item-input">
+    <span class="input-label">Photo2 :</span>
+	<div ngf-drop ngf-select ng-model="files" class="drop-box" 
+				        ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true"
+				        accept="image/*,application/pdf" 
+				        ngf-pattern="'image/*,application/pdf'"
+				    >Drop pdfs or images here or click to upload</div>
+				    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+				    Files:
+				    <ul>
+				        <li name="file" ng-repeat="f in files" style="font:smaller; word-break: break-word;">{{f.name}} {{f.$error}} {{f.$errorParam}}</li></ul>			
+  </label>-->
+  <label class="item item-input">
+    <div class="padding item item-input">
+		<button type="button" class="button button-block button-positive" id="submit" ng-click="submitForm(personnel)">Valider</button>
+	</div>
+  </label> 
+</form>
+</div>   
+  </ion-content> 
+<div class="tabs">
+  <a class="tab-item" href="#app/personnel/all">
+    Liste personnel
+  </a>
+  <a class="tab-item" href="#app/personnel/informations/details/{{ personnel.id}}">
+    D&eacute;tails
+  </a>
+  <a class="tab-item" ng-click="test()">  
+    Imprimer
+  </a>
+</div>
+</ion-view>
