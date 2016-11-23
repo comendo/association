@@ -19,11 +19,16 @@ const app = express();
 
 // [START hello_world]
 // Say hello!
+/*
 app.get('/', (req, res) => {
   res.status(200).send('Hello, world!');
 });
 // [END hello_world]
-
+*/
+ app.use(express.static(__dirname + '/www'));                 // set the static files location /public/img will be /img for users
+app.get('*', function(req, res) {
+        res.sendfile('./www/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+    });    
 if (module === require.main) {
   // [START server]
   // Start the server
