@@ -1,66 +1,18 @@
 {
   "name": "association",
-  "version": "1.0.0",
-  "description": "application comendo association",
-  "repository": "https://github.com/comendo/association.git",
+  "description": "Application de test de comendo",
   "private": true,
-  "scripts": {
-    "lint": "semistandard \"**/*.js\"",
-    "mocha": "mocha test/index.js -t 30000",
-    "cover": "istanbul cover --hook-run-in-context node_modules/mocha/bin/_mocha -- test/index.js -t 30000",
-    "test": "npm run lint && npm run cover",
-    "e2e": "mocha test/e2e.js -t 1800000",
-    "codecov": "cat ./coverage/lcov.info | codecov"
-  },
-  "author": "Google Inc.",
-  "contributors": [
-    {
-      "name": "Sebastien DOQUET",
-      "email": "doquet.sebastien@comendo.fr"
-    }
-  ],
   "license": "Apache Version 2.0",
-  "semistandard": {
-    "globals": [
-      "after",
-      "afterEach",
-      "before",
-      "beforeEach",
-      "describe",
-      "it"
-    ]
+  "author": "Google Inc.",
+  "engines": {
+    "node": "~4.2"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "monitor": "nodemon app.js",
+    "deploy": "gcloud app deploy"
   },
   "dependencies": {
-    "async": "^2.0.1",
-    "body-parser": "^1.15.2",
-    "cookie-session": "^2.0.0-alpha.1",
-    "express": "^4.14.0",
-    "express-winston": "^2.0.0",
-    "gcloud": "~0.37.0",
-    "jade": "^1.11.0",
-    "kerberos": "^0.0.21",
-    "lodash": "^4.14.2",
-    "mongodb": "^2.2.5",
-    "multer": "^1.2.0",
-    "mysql": "^2.11.1",
-    "nconf": "^0.8.4",
-    "prompt": "^1.0.0",
-    "request": "^2.74.0",
-    "winston": "^2.2.0"
-  },
-  "devDependencies": {
-    "codecov": "^1.0.1",
-    "istanbul": "^0.4.4",
-    "mocha": "^3.0.2",
-    "nodejs-repo-tools": "git+https://github.com/GoogleCloudPlatform/nodejs-repo-tools.git#21daa823090c43fb667157c8b5b0c3b7f45a8357",
-    "proxyquire": "^1.7.10",
-    "request": "^2.74.0",
-    "semistandard": "^9.1.0",
-    "shelljs": "^0.7.3",
-    "sinon": "^1.17.5",
-    "supertest": "^2.0.0"
-  },
-  "engines": {
-    "node": ">=0.12.7"
+    "express": "^4.13.4"
   }
 }
